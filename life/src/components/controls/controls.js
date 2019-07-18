@@ -10,10 +10,9 @@ function Controls(props) {
             ? <button className="stop" onClick={props.stopGame} >Stop</button> 
             : <button className="start" onClick={props.startGame} >Start</button> 
         }
-      {/* <button className="start" onClick={props.startGame} >Start</button> */}
       <button className="step" onClick={props.gameTick} >Step</button>
       <button className="reset" onClick={props.resetGame}>Reset</button>
-      <div className="generation">generation: {props.generation}</div>
+      <div className="generation">Generation: {props.generation}</div>
 
       <h2 className="presets" >Presets:</h2>
       <button className="preset" onClick={props.generateGrid} >Random</button>

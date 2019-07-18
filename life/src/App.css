@@ -1,11 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
 @import url(https://fonts.googleapis.com/css?family=Monoton);
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap);
+
+* {
+  box-sizing: border-box;
+  background-color: black;
+}
 
 .App {
   text-align: center;
-  /* display: flex; */
-  /* flex-direction: row; */
   font-family: monospace;
   margin-top: 20px;
 }
@@ -27,7 +30,6 @@
 }
 
 .title {
-  /* background-color: white: */
   color: white;
   display: table;
   padding: 5px;
@@ -36,7 +38,6 @@
   background-color: black;
   font-family: 'Press Start 2P', cursive;
 }
-
 
 .conway-title {
   position: relative;

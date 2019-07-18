@@ -25,22 +25,14 @@
 .cell {
     height: 15px;
     width: 15px;
-    /* font-family: 'Press Start 2P', cursive; */
 }
 
 .alive {
-    /* background-color: #1fc001; */
     background-color: #76c442;
-    /* background-color: #92cc41; */
     color: black;
-    /* font-size: 5px; */
 }
 
 .dead {
     background-color: black;
-    /* color: #1fc001; */
     color: #76c442;
-    /* color: #92cc41; */
-
-    /* font-size: 5px; */
 }

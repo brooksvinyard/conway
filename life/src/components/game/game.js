@@ -9,46 +9,45 @@ class Game extends React.Component {
         super(props);
         this.state = {
             generation: 0,
-            // grid: [[1,0,1,1],[0,0,1,1],[1,0,0,1],[0,0,0,0]],
-            // grid: [[1,1,1,1],[1,1,1,1],[1,1,1,1],[1,1,1,1]],
-            // grid: [[1,1,0,0,0,0],[0,1,1,0,1,1],[0,1,1,0,1,0],[0,0,0,0,1,1],[0,0,0,0,1,1],[0,0,1,0,0,0]],
-            // grid: [[0,0,0,0,0,0],[0,0,1,1,0,0],[0,0,1,1,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]],
             grid: null,
-            gridSize: 50,
+            gridSize: 50, // Grid size is hard coded to be 50x50
             start: false,
             initialGrid: [],
 
         }
     }
     componentDidMount = () => {
+        // When the page is loaded, generate a new random grid and make it the initial grid
         var randomGrid = this.generateGrid(this.state.gridSize)
         this.setState({ grid: randomGrid });
         this.setState({ initialGrid: randomGrid });
     }
 
-    componentDidUpdate = () => {
-    }
-
     generateGrid = () => {
+        // Greate a new random grid
         var size = this.state.gridSize
         var newGrid =  new Array(size*size).fill(0).map(function(n) {
             return Math.round(Math.random());
         });
         var gridgrid = this.lineToGridFn(size, newGrid)
+        this.setState({ generation: 0 });
         this.setState({ grid: gridgrid });
         return this.lineToGridFn(size, newGrid)
     }
     blankGrid = () => {
+        // Greate a new blank grid
         var size = this.state.gridSize
         var newGrid =  new Array(size*size).fill(0).map(function(n) {
             return 0;
         });
         var gridgrid = this.lineToGridFn(size, newGrid)
         this.setState({ grid: gridgrid });
+        this.setState({ generation: 0 });
         return this.lineToGridFn(size, newGrid)
     }
 
     clickCell = (location) => {
+        // On click, change if a cell is alive or dead
         var newGrid = this.state.grid
         if (newGrid[location[0]][location[1]] === 0){
             newGrid[location[0]][location[1]] = 1
@@ -63,6 +62,7 @@ class Game extends React.Component {
         this.setState({ start: true });
         gameInterval = setInterval(this.gameTick, 100);
     }
+
     gameTick = () => {
         this.game(this.state.gridSize, this.state.grid)
         this.setState({ generation: this.state.generation + 1 });
@@ -86,8 +86,6 @@ class Game extends React.Component {
                 line.push(grid[i][j])
             }
         }
-        // console.log("grid line:", line);
-        // this.setState({ gridLine: line });
         return line
     }
 
@@ -105,8 +103,6 @@ class Game extends React.Component {
                 innerGrid.push(gridLine[i])
             }
         }
-        // console.log("outerGrid:", outerGrid);
-        // this.setState({ grid: outerGrid });
         return outerGrid
     }
 
@@ -120,29 +116,28 @@ class Game extends React.Component {
             var neighbors = this.neighbors(index, gridLine, gridSize)
             if (cell === 1){ // cell alive
                 if (neighbors === 2 || neighbors === 3){ // cell has 2 or 3 neighbors
-                    newGridLine.push(1)
+                    newGridLine.push(1) // Cell stays alive
                 } else {
-                    newGridLine.push(0)
+                    newGridLine.push(0) // Cell dies
                 }
 
             } else { // cell dead
                 if (neighbors === 3){ // cell has 3 neighbors
-                    newGridLine.push(1)
+                    newGridLine.push(1) // Cell comes to life
                 } else {
-                    newGridLine.push(0)
+                    newGridLine.push(0) // Cell stays dead
                 }
             }
             return newGridLine
         })
 
-        // console.log("*GAME* newGridLine", newGridLine)
         var newGrid = this.lineToGridFn(gridSize, newGridLine)
         this.setState({ grid: newGrid });
     }
 
     neighbors = (index, gridLine, gridSize) => {
         // neighbor =   -gridSize -1, -gridSize, -gridSize +1
-        //                        -1,                     ,+1
+        //                        -1,     cell            ,+1
         //              +gridSize -1, +gridSize, +gridSize +1 
         var neighbors = 0
 
@@ -154,7 +149,6 @@ class Game extends React.Component {
         if ((index % gridSize) !== 0 && gridLine[index + gridSize - 1] === 1)                               {neighbors += 1}
         if (gridLine[index + gridSize    ] === 1)                                                           {neighbors += 1}
         if (((index+1) % gridSize) !== 0 && gridLine[index + gridSize + 1] === 1)                           {neighbors += 1}
-        // console.log(index, neighbors)
         return neighbors
     }
 
@@ -166,7 +160,6 @@ class Game extends React.Component {
         } else {
             return (
             <div className="game">
-                {/* generation: {this.state.generation} */}
                 <Controls blankGrid={this.blankGrid} generateGrid={this.generateGrid} gameTick={this.gameTick} start={this.state.start} startGame={this.startGame} stopGame={this.stopGame} resetGame={this.resetGame} generation={this.state.generation}/>
                 <Display grid={this.state.grid} clickCell={this.clickCell}/>
             </div>

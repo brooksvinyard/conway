@@ -21,7 +21,6 @@ button:focus {
 
 .start {
     color:#76c442;
-    /* background-color: #662D9133; */
     background-color: #76c44233;
     box-shadow: inset -4px -4px 0 #76c442bb;
     border: 3px solid #76c442;
@@ -51,7 +50,6 @@ button:focus {
 .stop:active {
     box-shadow: inset 4px 4px 0 #cc0413bb;
 }
-
 
 .step {
     color: #209cee;
@@ -94,7 +92,6 @@ button:focus {
 }
 
 .presets {
-    /* background-color: white: */
     color: white;
     display: table;
     padding: 5px;
