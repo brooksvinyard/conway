@@ -116,3 +116,23 @@ button:focus {
 .preset:active {
     box-shadow: inset 4px 4px 0 #f77602bb;
 }
+
+@media (max-width: 1000px) {
+    button {
+        margin: 10px 0 20px 0;
+    } 
+    .controls {
+        display: flex;
+        flex-direction: column;
+    }
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .presets {
+        padding: 5px;
+        margin: 10px 0 10px 0;
+        text-align: left;
+    }
+}

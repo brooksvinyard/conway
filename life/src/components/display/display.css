@@ -13,6 +13,7 @@
     font-family: 'Press Start 2P', cursive;
 
 }
+
 .row {
     display: flex;
     text-align: center;
@@ -35,4 +36,19 @@
 .dead {
     background-color: black;
     color: #76c442;
+}
+
+@media (max-width: 1000px) {
+    .title {
+        color: white;
+        display: table;
+        padding: 5px;
+        margin: -35px 0 0px 0;
+        font-size: 30px;
+        text-align: left;
+        width: fit-content;
+    }
+    .display {
+        margin: 30px 3%;
+    }
 }

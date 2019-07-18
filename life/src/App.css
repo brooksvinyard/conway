@@ -68,3 +68,24 @@
   color: white;
   text-align: left;
 }
+
+@media (max-width: 1000px) {
+  .conway-title {
+    margin-top: 160px;
+  }
+  
+  .title1 {
+    top: -310px;
+    font-size: 100px;
+    margin-top: 230px;
+    margin-left: 10px;
+  }
+  
+  .title2 {
+    font-size: 100px;
+    margin-top: -95px; 
+  }
+  .game {
+    flex-direction: column;
+  }
+}
