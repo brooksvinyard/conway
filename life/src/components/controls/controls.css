@@ -1,0 +1,121 @@
+.controls {
+    border: 4px solid white;
+    padding: 10px;
+    margin: 0 3%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+    color: white;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+} 
+button:focus {
+    outline: none;
+}
+
+.start {
+    color:#76c442;
+    /* background-color: #662D9133; */
+    background-color: #76c44233;
+    box-shadow: inset -4px -4px 0 #76c442bb;
+    border: 3px solid #76c442;
+}
+
+.start:hover {
+    background-color: #76c44240;
+    box-shadow: inset -4px -4px 0 #76c442bb;
+}
+
+.start:active {
+    box-shadow: inset 4px 4px 0 #76c442bb;
+}
+
+.stop {
+    color: #cc0413;
+    background-color: #cc041333;
+    box-shadow: inset -4px -4px 0 #cc0413bb;
+    border: 3px solid #cc0413;
+}
+
+.stop:hover {
+    background-color: #cc041340;
+    box-shadow: inset -4px -4px 0 #cc0413bb;
+}
+
+.stop:active {
+    box-shadow: inset 4px 4px 0 #cc0413bb;
+}
+
+
+.step {
+    color: #209cee;
+    background-color: #209cee33;
+    box-shadow: inset -4px -4px 0 #209ceebb;
+    border: 3px solid #209cee;
+}
+
+.step:hover {
+    background-color: #209cee40;
+    box-shadow: inset -4px -4px 0 #209ceebb;
+}
+
+.step:active {
+    box-shadow: inset 4px 4px 0 #209ceebb;
+}
+
+.reset {
+    color: #f7d51d;
+    background-color: #f7d51d33;
+    box-shadow: inset -4px -4px 0 #f7d51dbb;
+    border: 3px solid #f7d51d;
+}
+
+.reset:hover {
+    background-color: #f7d51d40;
+    box-shadow: inset -4px -4px 0 #f7d51dbb;
+}
+
+.reset:active {
+    box-shadow: inset 4px 4px 0 #f7d51dbb;
+}
+
+.generation {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px; 
+}
+
+.presets {
+    /* background-color: white: */
+    color: white;
+    display: table;
+    padding: 5px;
+    margin: 50px 0 10px 0;
+    font-size: 30px;
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.preset {
+    color: #f77602;
+    background-color: #f7760233;
+    box-shadow: inset -4px -4px 0 #f77602bb;
+    border: 3px solid #f77602;
+}
+
+.preset:hover {
+    background-color: #f7760240;
+    box-shadow: inset -4px -4px 0 #f77602bb;
+}
+
+.preset:active {
+    box-shadow: inset 4px 4px 0 #f77602bb;
+}

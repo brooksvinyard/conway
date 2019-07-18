@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+@import url(https://fonts.googleapis.com/css?family=Monoton);
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+.App {
+  text-align: center;
+  /* display: flex; */
+  /* flex-direction: row; */
+  font-family: monospace;
+  margin-top: 20px;
+}
+
+.conway {
+  color: white;
+  display: table;
+  margin: 3%;
+  font-size: 50px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.game {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-family: monospace;
+  margin-top: 20px;
+}
+
+.title {
+  /* background-color: white: */
+  color: white;
+  display: table;
+  padding: 5px;
+  margin: -35px 0 10px 0;
+  font-size: 30px;
+  background-color: black;
+  font-family: 'Press Start 2P', cursive;
+}
+
+
+.conway-title {
+  position: relative;
+  margin-top: 220px;
+}
+
+.title1 {
+  position: absolute;
+  top: -310px;
+  font-family: 'Mr Dafoe', cursive;
+  font-size: 200px;
+  margin-top: 160px;
+  color: #fd5afa;
+  text-shadow: -2px -2px 0 #FFBAF2;
+  font-weight: normal;
+  z-index: 2;
+  margin-left: 60px;
+  background-color: transparent;
+}
+
+.title2 {
+  font-family: 'Monoton', cursive;
+  font-size: 150px;
+  font-weight: 400;
+  line-height: 1;
+  margin: 3%;
+  margin-top: -95px; 
+  color: white;
+  text-align: left;
+}
