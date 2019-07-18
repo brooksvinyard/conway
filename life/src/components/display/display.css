@@ -52,3 +52,11 @@
         margin: 30px 3%;
     }
 }
+
+@media (max-width: 600px) {
+    .row {
+        line-height: 2;
+        font-size: 8px;
+    }
+    
+}

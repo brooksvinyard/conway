@@ -18,6 +18,10 @@ button {
 button:focus {
     outline: none;
 }
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
 
 .start {
     color:#76c442;
@@ -135,4 +139,11 @@ button:focus {
         margin: 10px 0 10px 0;
         text-align: left;
     }
+}
+
+@media (max-width: 600px) {
+    button {
+        font-size: 11px;
+        height: 40px;
+    } 
 }
