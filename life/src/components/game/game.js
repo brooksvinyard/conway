@@ -25,6 +25,8 @@ class Game extends React.Component {
 
     generateGrid = () => {
         // Greate a new random grid
+        this.setState({ start: false });
+        clearInterval(gameInterval);
         var size = this.state.gridSize
         var newGrid =  new Array(size*size).fill(0).map(function(n) {
             return Math.round(Math.random());
@@ -36,6 +38,9 @@ class Game extends React.Component {
     }
     blankGrid = () => {
         // Greate a new blank grid
+        this.setState({ start: false });
+        clearInterval(gameInterval);
+
         var size = this.state.gridSize
         var newGrid =  new Array(size*size).fill(0).map(function(n) {
             return 0;
@@ -48,6 +53,8 @@ class Game extends React.Component {
 
     gunGrid = () => {
         // Start with an empty grid and make Gosper Glider Gun
+        this.setState({ start: false });
+        clearInterval(gameInterval);
         var emptyGrid =  this.blankGrid()
         
         var newGun = [[16, 3], [15, 3], [15, 4], [16, 4], [16, 11], [17, 11], [17, 12], [15, 12], [15, 13], [16, 13], [17, 19], [17, 20], [18, 19], [18, 21], [19, 19], [15, 25], [14, 25], [15, 26], [13, 26], [14, 27], [13, 27], [13, 37], [13, 38], [14, 38], [14, 37], [21, 38], [25, 27], [26, 27], [25, 28], [25, 29], [27, 28], [20, 38], [22, 38], [20, 39], [21, 40] ]
@@ -88,6 +95,7 @@ class Game extends React.Component {
 
     resetGame = () => {
         this.setState({ start: false });
+        clearInterval(gameInterval);
         this.setState({ generation: 0 });
         this.setState({ grid: this.state.initialGrid });
     }

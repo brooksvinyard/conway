@@ -68,24 +68,6 @@
   color: white;
   text-align: left;
 }
-a {
-  color: white;
-}
-a:link {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  text-decoration: underline;
-}
 
 .footer {
   color: white;
@@ -93,6 +75,26 @@ a:active {
   text-align: left;
   margin: 3%;
 }
+.footer a {
+  color: white;
+}
+/* .footer a:link {
+  text-decoration: none;
+} */
+/* 
+.footer a:visited {
+  text-decoration: none;
+} */
+
+/* .footer a:hover {
+  text-decoration: underline;
+} */
+/* 
+.footer a:active {
+  text-decoration: underline;
+} */
+
+
 
 @media (max-width: 1000px) {
   .conway-title {
