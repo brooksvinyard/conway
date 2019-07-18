@@ -46,6 +46,20 @@ class Game extends React.Component {
         return this.lineToGridFn(size, newGrid)
     }
 
+    gunGrid = () => {
+        // Start with an empty grid and make Gosper Glider Gun
+        var emptyGrid =  this.blankGrid()
+        
+        var newGun = [[16, 3], [15, 3], [15, 4], [16, 4], [16, 11], [17, 11], [17, 12], [15, 12], [15, 13], [16, 13], [17, 19], [17, 20], [18, 19], [18, 21], [19, 19], [15, 25], [14, 25], [15, 26], [13, 26], [14, 27], [13, 27], [13, 37], [13, 38], [14, 38], [14, 37], [21, 38], [25, 27], [26, 27], [25, 28], [25, 29], [27, 28], [20, 38], [22, 38], [20, 39], [21, 40] ]
+        newGun.map(e => {
+            return emptyGrid[e[0]][e[1]] = 1
+        })
+        
+        this.setState({ generation: 0 });
+        this.setState({ grid: emptyGrid });
+    }
+
+
     clickCell = (location) => {
         // On click, change if a cell is alive or dead
         var newGrid = this.state.grid
@@ -54,7 +68,6 @@ class Game extends React.Component {
         } else {
             newGrid[location[0]][location[1]] = 0
         }
-        console.log(location, newGrid[location[0]][location[1]])
         this.setState({ grid: newGrid });
     }
 
@@ -160,7 +173,7 @@ class Game extends React.Component {
         } else {
             return (
             <div className="game">
-                <Controls blankGrid={this.blankGrid} generateGrid={this.generateGrid} gameTick={this.gameTick} start={this.state.start} startGame={this.startGame} stopGame={this.stopGame} resetGame={this.resetGame} generation={this.state.generation}/>
+                <Controls gunGrid={this.gunGrid} blankGrid={this.blankGrid} generateGrid={this.generateGrid} gameTick={this.gameTick} start={this.state.start} startGame={this.startGame} stopGame={this.stopGame} resetGame={this.resetGame} generation={this.state.generation}/>
                 <Display grid={this.state.grid} clickCell={this.clickCell}/>
             </div>
             );

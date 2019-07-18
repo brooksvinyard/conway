@@ -17,6 +17,7 @@ function Controls(props) {
       <h2 className="presets" >Presets:</h2>
       <button className="preset" onClick={props.generateGrid} >Random</button>
       <button className="preset" onClick={props.blankGrid}>Blank</button>
+      <button className="preset" onClick={props.gunGrid}>Glider Gun</button>
 
         
     </div>
