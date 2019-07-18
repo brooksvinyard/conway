@@ -12,6 +12,9 @@ function App() {
         <h1 className="title2">Game of Life</h1>
       </div>
       <Game />
+      <div className="footer" >
+        <a href="https://brooksvinyard.com">&copy; Brooks Vinyard</a> : <a href="http://https://github.com/brooksvinyard/conway">GitHub</a>
+      </div>
     </div>
   );
 }
