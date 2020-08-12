@@ -13,7 +13,7 @@ function App() {
       </div>
       <Game />
       <div className="footer" >
-        <a href="https://brooksvinyard.com">&copy; Brooks Vinyard</a> : <a href="http://https://github.com/brooksvinyard/conway">GitHub</a>
+        <a href="https://brooksvinyard.com">&copy; Brooks Vinyard</a> : <a href="https://github.com/brooksvinyard/conway">GitHub</a>
       </div>
     </div>
   );
